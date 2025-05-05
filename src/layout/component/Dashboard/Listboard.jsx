@@ -95,7 +95,7 @@ const Listboard = ({ open }) => {
                 />
               </ListItemButton>
               {openServer &&
-                serverData.map((item) => (
+                serverData?.map((item) => (
                   <ListItem
                     button
                     component={NavLink}
@@ -157,7 +157,7 @@ const Listboard = ({ open }) => {
                 />
               </ListItemButton>
               {openClient &&
-                clientData.map((item) => (
+                clientData?.map((item) => (
                   <ListItem
                     button
                     component={NavLink}

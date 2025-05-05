@@ -61,8 +61,8 @@ const GenericSelect = () => {
   };
 
   const handleAddToChips = (e, index) => {
-    const user = data.getAllUsers.node[index];
-    if (selected.map((item) => item.id).includes(user.originalId)) {
+    const user = data?.getAllUsers?.node?.[index];
+    if (selected?.map((item) => item.id).includes(user.originalId)) {
       handleDelete(user.originalId, index);
       return;
     }
@@ -74,9 +74,9 @@ const GenericSelect = () => {
   };
 
   const handleScroll = async (e, itemSize, height) => {
-    const nextCursor = data.getAllUsers.cursor;
+    const nextCursor = data?.getAllUsers?.cursor;
     const { scrollOffset } = e;
-    if (scrollOffset === itemSize * data.getAllUsers.node.length - height) {
+    if (scrollOffset === itemSize * data?.getAllUsers?.node?.length - height) {
       setIsItemActive((prev) => {
         const newItems = [...prev, ...generateItems(fetchLimit)];
         return newItems;
@@ -87,12 +87,12 @@ const GenericSelect = () => {
           limit: fetchLimit,
         },
         updateQuery: (prevData, { fetchMoreResult }) => {
-          if (!fetchMoreResult.getAllUsers) return prevData;
+          if (!fetchMoreResult?.getAllUsers) return prevData;
           const { getAllUsers } = prevData;
           const {
             getAllUsers: { node, cursor, pageInfo },
           } = fetchMoreResult;
-          const updatedNode = [...getAllUsers.node, ...node];
+          const updatedNode = [...getAllUsers?.node, ...node];
           return {
             getAllUsers: {
               cursor,
@@ -204,7 +204,7 @@ const GenericSelect = () => {
               direction="row"
               spacing={1}
             >
-              {selected.map((item) => (
+              {selected?.map((item) => (
                 <Chip
                   variant="outlined"
                   label={item.name}
@@ -239,7 +239,7 @@ const GenericSelect = () => {
           <MenuList
             items={isItemActive}
             toggleItemActive={toggleItemActive}
-            options={data.getAllUsers.node}
+            options={data?.getAllUsers?.node}
             onScroll={handleScroll}
             handleAdd={handleAddToChips}
           />

@@ -52,7 +52,7 @@ const GenericTable = ({
         >
           <TableHead onSort={onSort}>
             <StyledTableRow className={classes.headRow}>
-              {column.map((head) => (
+              {column?.map((head) => (
                 <StyledTableCell
                   key={head.field}
                   align={head.align}
@@ -78,7 +78,7 @@ const GenericTable = ({
             </StyledTableRow>
           </TableHead>
           <TableBody>
-            {stableSort(data, getComparator(order, orderBy)).map((row) =>
+            {stableSort(data, getComparator(order, orderBy))?.map((row) =>
               loading ? (
                 <CircularProgress />
               ) : (
@@ -86,7 +86,7 @@ const GenericTable = ({
                   className={classes.tableCells}
                   key={row.originalId}
                 >
-                  {column.map((item) => (
+                  {column?.map((item) => (
                     <StyledTableCell
                       key={`${item.field}${row.originalId}`}
                       align={item.align}
@@ -94,7 +94,7 @@ const GenericTable = ({
                       {item.format
                         ? item.format(row[item.field])
                         : row[item.field] ||
-                          actions.map((action, index) => (
+                          actions?.map((action, index) => (
                             <div key={index.Menu} size="small">
                               {action.Menu(row.originalId)}
                             </div>

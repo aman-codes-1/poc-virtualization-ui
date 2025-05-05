@@ -86,7 +86,7 @@ const GenericSelect = () => {
 
   const handleAddToChips = (e, index) => {
     const user = users[index];
-    if (selected.map((item) => item.id).includes(user.originalId)) {
+    if (selected?.map((item) => item.id).includes(user.originalId)) {
       handleDelete(user.originalId, index);
       return;
     }
@@ -195,7 +195,7 @@ const GenericSelect = () => {
               direction="row"
               spacing={1}
             >
-              {selected.map((item) => (
+              {selected?.map((item) => (
                 <Chip
                   variant="outlined"
                   label={item.name}

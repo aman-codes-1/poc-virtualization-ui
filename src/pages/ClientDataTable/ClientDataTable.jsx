@@ -51,7 +51,7 @@ const ClientDataTable = () => {
     try {
       const indexDbCount = await db.users.count();
       const res = await getCount();
-      const mongoCount = res.data.getAllUsers.count;
+      const mongoCount = res?.data?.getAllUsers?.count;
 
       if (indexDbCount < mongoCount) {
         const lastData = await db.users.reverse().limit(1).first();

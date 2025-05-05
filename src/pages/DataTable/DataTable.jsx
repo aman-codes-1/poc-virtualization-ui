@@ -18,9 +18,9 @@ const DataTable = () => {
 
   const handleChangePage = async (event, newPage) => {
     if (page < newPage) {
-      await refetch({ cursor: data.getAllUsers.cursor });
+      await refetch({ cursor: data?.getAllUsers?.cursor });
     } else {
-      await refetch({ cursor: `-${data.getAllUsers.pageInfo.endCursor}` });
+      await refetch({ cursor: `-${data?.getAllUsers?.pageInfo?.endCursor}` });
     }
     setPage(newPage);
   };
@@ -62,9 +62,9 @@ const DataTable = () => {
           <GenericTable
             loading={loading}
             tableReloadHandler={handleChangePage}
-            dataLength={data.getAllUsers.node.length}
+            dataLength={data?.getAllUsers?.node?.length}
             id="traineeTable"
-            data={data.getAllUsers.node}
+            data={data?.getAllUsers?.node}
             column={column}
             actions={[
               {
@@ -75,7 +75,7 @@ const DataTable = () => {
             order={order}
             onSort={handleSort}
             rowsPerPageOptions={[10]}
-            count={data.getCount.count}
+            count={data?.getCount?.count}
             page={page}
             rowsPerPage={5}
             onChangePage={handleChangePage}
