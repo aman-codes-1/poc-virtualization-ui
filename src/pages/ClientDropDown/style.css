@@ -1,0 +1,92 @@
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.List {
+  border: 1px solid #d9dddd;
+}
+
+.ListItemEven,
+.ListItemOdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListItemEven {
+  background-color: #f8f8f0;
+}
+
+.custom_select{
+  border: 1px solid #c4c4c4;
+  display: flex;
+  flex-basis: 100%;
+  overflow-y: hidden;
+  justify-content: space-between;
+  min-height: 47px;
+  border-radius: 0.3rem;
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+.custom_select:hover{
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.item_clicked{
+  border: 1.5px solid #0072E5;
+}
+.item_clicked:hover{
+  border: 1.5px solid #0072E5;
+}
+
+.selected_fields{
+  margin: 0 3px;
+  background-color: aqua;
+  padding: 5px;
+}
+
+.dropdown_open{
+  transform: rotateX(180deg);
+  -moz-transition: transform 1s;
+  -webkit-transition: transform 1s;
+  transition: transform 1s ease-in-out;
+}
+
+.menulist{
+  box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+  width: calc(100% - 30px);
+}
+
+.listItem{
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.listItem_clicked{
+  background-color: #a3a2a2;
+  color: white;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.listItem:hover{
+  background-color: #F3F6F9;
+}
+
+.btnClearAll{
+  height: 30px;
+  width: 31px;
+}
+
+.blankSpace{
+  width: 31px;
+}
+
+.titleWrapper{
+  display:flex;
+  justify-content: center;
+}
